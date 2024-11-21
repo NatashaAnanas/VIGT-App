@@ -12,6 +12,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Мы начинаем наш проект! :)
+        // ghb
     }
 }
 
