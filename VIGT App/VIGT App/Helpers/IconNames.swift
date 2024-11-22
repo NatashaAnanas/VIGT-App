@@ -9,4 +9,5 @@ import Foundation
 
 public enum IconNames {
     static let mainBackgroundImage = "mainBackgroundImage"
+    static let mainBackgroundImage2 = "mainBackgroundImage2"
 }
