@@ -11,7 +11,7 @@ final class MainViewController: UIViewController {
     
     private lazy var backgroundImageView = {
         let imageView = UIImageView(frame: view.bounds)
-        imageView.image = UIImage(named: IconNames.mainBackgroundImage)
+        imageView.image = UIImage(named: IconNames.mainBackgroundImage2)
         return imageView
     }()
     
