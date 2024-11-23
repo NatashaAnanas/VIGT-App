@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17482CEFC99700F1454B /* AppDelegate.swift */; };
 		950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C174A2CEFC99700F1454B /* SceneDelegate.swift */; };
-		950C174D2CEFC99700F1454B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C174C2CEFC99700F1454B /* MainViewController.swift */; };
+		950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C174C2CEFC99700F1454B /* EntranceViewController.swift */; };
 		950C17502CEFC99700F1454B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C174E2CEFC99700F1454B /* Main.storyboard */; };
 		950C17522CEFC99B00F1454B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950C17512CEFC99B00F1454B /* Assets.xcassets */; };
 		950C17552CEFC99B00F1454B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C17532CEFC99B00F1454B /* LaunchScreen.storyboard */; };
@@ -19,13 +19,16 @@
 		950C17662CF0707D00F1454B /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17652CF0707C00F1454B /* LocalizationKeys.swift */; };
 		950C17682CF070D900F1454B /* Localizable(English).strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17672CF070D900F1454B /* Localizable(English).strings */; };
 		950C176A2CF0712600F1454B /* Localizable(Russia).strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17692CF0712600F1454B /* Localizable(Russia).strings */; };
+		950C17772CF2720400F1454B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17762CF2720400F1454B /* CustomTextField.swift */; };
+		950C177D2CF282D400F1454B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C177C2CF282D400F1454B /* RegistrationViewController.swift */; };
+		950C17802CF2892100F1454B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C177F2CF2892100F1454B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		950C17452CEFC99700F1454B /* VIGT App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIGT App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950C17482CEFC99700F1454B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		950C174A2CEFC99700F1454B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		950C174C2CEFC99700F1454B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		950C174C2CEFC99700F1454B /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
 		950C174F2CEFC99700F1454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		950C17512CEFC99B00F1454B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		950C17542CEFC99B00F1454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		950C17652CF0707C00F1454B /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		950C17672CF070D900F1454B /* Localizable(English).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(English).strings"; sourceTree = "<group>"; };
 		950C17692CF0712600F1454B /* Localizable(Russia).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(Russia).strings"; sourceTree = "<group>"; };
+		950C17762CF2720400F1454B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		950C177C2CF282D400F1454B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "VIGT App/Helpers/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		950C177F2CF2892100F1454B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "../../../../../../Library/Mobile Documents/.Trash/Modules/Main/MainViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +74,12 @@
 		950C17472CEFC99700F1454B /* VIGT App */ = {
 			isa = PBXGroup;
 			children = (
+				950C17792CF280AE00F1454B /* Modules */,
 				950C17642CF0705C00F1454B /* Localization */,
 				950C175F2CEFF36000F1454B /* Helpers */,
 				950C175C2CEFF31300F1454B /* Extensions */,
 				950C17482CEFC99700F1454B /* AppDelegate.swift */,
 				950C174A2CEFC99700F1454B /* SceneDelegate.swift */,
-				950C174C2CEFC99700F1454B /* MainViewController.swift */,
 				950C174E2CEFC99700F1454B /* Main.storyboard */,
 				950C17512CEFC99B00F1454B /* Assets.xcassets */,
 				950C17532CEFC99B00F1454B /* LaunchScreen.storyboard */,
@@ -93,6 +99,7 @@
 		950C175F2CEFF36000F1454B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				950C17782CF2721400F1454B /* CustomViews */,
 				950C17602CEFF37800F1454B /* IconNames.swift */,
 				950C17622CEFF4EF00F1454B /* MagicNumber.swift */,
 			);
@@ -102,7 +109,6 @@
 		950C17642CF0705C00F1454B /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				950C176B2CF0715800F1454B /* New Group */,
 				950C17652CF0707C00F1454B /* LocalizationKeys.swift */,
 				950C17672CF070D900F1454B /* Localizable(English).strings */,
 				950C17692CF0712600F1454B /* Localizable(Russia).strings */,
@@ -110,11 +116,46 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		950C176B2CF0715800F1454B /* New Group */ = {
+		950C17782CF2721400F1454B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				950C17762CF2720400F1454B /* CustomTextField.swift */,
 			);
-			path = "New Group";
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		950C17792CF280AE00F1454B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				950C177A2CF2813600F1454B /* Entrance */,
+				950C177B2CF2813F00F1454B /* Registration */,
+				950C177E2CF2891000F1454B /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		950C177A2CF2813600F1454B /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				950C174C2CEFC99700F1454B /* EntranceViewController.swift */,
+			);
+			path = Entrance;
+			sourceTree = "<group>";
+		};
+		950C177B2CF2813F00F1454B /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				950C177C2CF282D400F1454B /* RegistrationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		950C177E2CF2891000F1454B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				950C177F2CF2892100F1454B /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,13 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950C174D2CEFC99700F1454B /* MainViewController.swift in Sources */,
+				950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */,
+				950C17772CF2720400F1454B /* CustomTextField.swift in Sources */,
 				950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */,
+				950C177D2CF282D400F1454B /* RegistrationViewController.swift in Sources */,
 				950C175E2CEFF32D00F1454B /* UIView+extension.swift in Sources */,
 				950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */,
 				950C17632CEFF4EF00F1454B /* MagicNumber.swift in Sources */,
 				950C17662CF0707D00F1454B /* LocalizationKeys.swift in Sources */,
 				950C17612CEFF37800F1454B /* IconNames.swift in Sources */,
+				950C17802CF2892100F1454B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
