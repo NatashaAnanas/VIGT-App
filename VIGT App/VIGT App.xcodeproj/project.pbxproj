@@ -20,9 +20,8 @@
 		950C17682CF070D900F1454B /* Localizable(English).strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17672CF070D900F1454B /* Localizable(English).strings */; };
 		950C176A2CF0712600F1454B /* Localizable(Russia).strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17692CF0712600F1454B /* Localizable(Russia).strings */; };
 		950C17772CF2720400F1454B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17762CF2720400F1454B /* CustomTextField.swift */; };
-		950C177D2CF282D400F1454B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C177C2CF282D400F1454B /* RegistrationViewController.swift */; };
-		950C17802CF2892100F1454B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C177F2CF2892100F1454B /* MainViewController.swift */; };
 		950C17822CF2914D00F1454B /* CGFloat+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17812CF2914D00F1454B /* CGFloat+extension.swift */; };
+		950C17852CF2966900F1454B /* RegistrationViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17842CF2966900F1454B /* RegistrationViewController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +40,8 @@
 		950C17672CF070D900F1454B /* Localizable(English).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(English).strings"; sourceTree = "<group>"; };
 		950C17692CF0712600F1454B /* Localizable(Russia).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(Russia).strings"; sourceTree = "<group>"; };
 		950C17762CF2720400F1454B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		950C177C2CF282D400F1454B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "VIGT App/Helpers/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
-		950C177F2CF2892100F1454B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "../../../Library/Mobile Documents/.Trash/Modules/Main/MainViewController.swift"; sourceTree = SOURCE_ROOT; };
 		950C17812CF2914D00F1454B /* CGFloat+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+extension.swift"; sourceTree = "<group>"; };
+		950C17842CF2966900F1454B /* RegistrationViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +128,8 @@
 		950C17792CF280AE00F1454B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				950C17832CF2962900F1454B /* Registr */,
 				950C177A2CF2813600F1454B /* Entrance */,
-				950C177B2CF2813F00F1454B /* Registration */,
-				950C177E2CF2891000F1454B /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -145,23 +142,13 @@
 			path = Entrance;
 			sourceTree = "<group>";
 		};
-		950C177B2CF2813F00F1454B /* Registration */ = {
+		950C17832CF2962900F1454B /* Registr */ = {
 			isa = PBXGroup;
 			children = (
-				950C177C2CF282D400F1454B /* RegistrationViewController.swift */,
+				950C17842CF2966900F1454B /* RegistrationViewController1.swift */,
 			);
-			name = Registration;
-			path = "VIGT App/Modules/Registration";
-			sourceTree = SOURCE_ROOT;
-		};
-		950C177E2CF2891000F1454B /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				950C177F2CF2892100F1454B /* MainViewController.swift */,
-			);
-			name = Main;
-			path = "VIGT App/Modules/Main";
-			sourceTree = SOURCE_ROOT;
+			path = Registr;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -240,13 +227,12 @@
 				950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */,
 				950C17772CF2720400F1454B /* CustomTextField.swift in Sources */,
 				950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */,
-				950C177D2CF282D400F1454B /* RegistrationViewController.swift in Sources */,
 				950C175E2CEFF32D00F1454B /* UIView+extension.swift in Sources */,
+				950C17852CF2966900F1454B /* RegistrationViewController1.swift in Sources */,
 				950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */,
 				950C17632CEFF4EF00F1454B /* MagicNumber.swift in Sources */,
 				950C17662CF0707D00F1454B /* LocalizationKeys.swift in Sources */,
 				950C17612CEFF37800F1454B /* IconNames.swift in Sources */,
-				950C17802CF2892100F1454B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
