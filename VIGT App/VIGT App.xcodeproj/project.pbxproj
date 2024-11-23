@@ -29,7 +29,7 @@
 		950C17452CEFC99700F1454B /* VIGT App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIGT App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950C17482CEFC99700F1454B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		950C174A2CEFC99700F1454B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		950C174C2CEFC99700F1454B /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		950C174C2CEFC99700F1454B /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntranceViewController.swift; path = "VIGT App/Modules/Entrance/EntranceViewController.swift"; sourceTree = SOURCE_ROOT; };
 		950C174F2CEFC99700F1454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		950C17512CEFC99B00F1454B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		950C17542CEFC99B00F1454B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		950C17692CF0712600F1454B /* Localizable(Russia).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(Russia).strings"; sourceTree = "<group>"; };
 		950C17762CF2720400F1454B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		950C177C2CF282D400F1454B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "VIGT App/Helpers/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
-		950C177F2CF2892100F1454B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "../../../../../../Library/Mobile Documents/.Trash/Modules/Main/MainViewController.swift"; sourceTree = "<group>"; };
+		950C177F2CF2892100F1454B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "../../../Library/Mobile Documents/.Trash/Modules/Main/MainViewController.swift"; sourceTree = SOURCE_ROOT; };
 		950C17812CF2914D00F1454B /* CGFloat+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,16 +150,18 @@
 			children = (
 				950C177C2CF282D400F1454B /* RegistrationViewController.swift */,
 			);
-			path = Registration;
-			sourceTree = "<group>";
+			name = Registration;
+			path = "VIGT App/Modules/Registration";
+			sourceTree = SOURCE_ROOT;
 		};
 		950C177E2CF2891000F1454B /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				950C177F2CF2892100F1454B /* MainViewController.swift */,
 			);
-			path = Main;
-			sourceTree = "<group>";
+			name = Main;
+			path = "VIGT App/Modules/Main";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
