@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  EntranceViewController.swift
 //  VIGT App
 //
 //  Created by Наталья Коновалова on 21.11.2024.
@@ -117,7 +117,7 @@ final class EntranceViewController: UIViewController {
     }
     
     @objc private func registrationButtonAction() {
-        let registrationVC = RegistrationViewController()
+        let registrationVC = RegistrationViewController1()
         registrationVC.modalPresentationStyle = .formSheet
         show(registrationVC, sender: nil)
         
