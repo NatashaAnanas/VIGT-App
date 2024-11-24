@@ -33,7 +33,6 @@ final class EntranceViewController: UIViewController {
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
         textField.textPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -100,12 +99,13 @@ final class EntranceViewController: UIViewController {
     
     private func goToMainVC() {
         // TODO: - доделать переход
-//        let mainVC = MainViewController()
-//        let navController = UINavigationController(rootViewController: mainVC)
-//        navigationController?.pushViewController(mainVC, animated: true)
+        let mainVC = MainViewController()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
+        
     }
     
-    // проверка пароля и емайла с БД
     private func readUserData() {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text  ?? ""
@@ -130,7 +130,7 @@ final class EntranceViewController: UIViewController {
     }
     
     @objc private func registrationButtonAction() {
-        let registrationVC = RegistrationViewController1()
+        let registrationVC = RegistrationViewController()
         registrationVC.modalPresentationStyle = .formSheet
         show(registrationVC, sender: nil)
         
