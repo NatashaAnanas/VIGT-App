@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RegistrationViewController1: UIViewController {
+final class RegistrationViewController: UIViewController {
     
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
@@ -22,12 +22,12 @@ final class RegistrationViewController1: UIViewController {
     
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
+        textField.font = .systemFont(ofSize: 16)
         textField.placeholder = Localization.password.rawValue
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
         textField.textPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -102,7 +102,7 @@ final class RegistrationViewController1: UIViewController {
     }
 }
 
-extension RegistrationViewController1 {
+extension RegistrationViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
