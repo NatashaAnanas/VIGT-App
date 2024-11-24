@@ -106,15 +106,27 @@ final class EntranceViewController: UIViewController {
         
     }
     
-    @objc private func entranceButtonAction() {
-        // проверка пароля и емайла с БД
+    private func readUserData() {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text  ?? ""
         
-        if emailTextField.text == "12" && passwordTextField.text == "1" {
-            goToMainVC()
-            errorLabel.isHidden = true
+        if (!email.isEmpty && !password.isEmpty) {
+            if UserDefaults.standard.string(forKey: email) == password {
+                errorLabel.isHidden = true
+                goToMainVC()
+            } else {
+                errorLabel.text = "Неверный логин или пароль"
+                errorLabel.isHidden = false
+            }
+            
         } else {
+            errorLabel.text = "Заполните все поля"
             errorLabel.isHidden = false
         }
+    }
+    
+    @objc private func entranceButtonAction() {
+        readUserData()
     }
     
     @objc private func registrationButtonAction() {
@@ -166,6 +178,6 @@ extension EntranceViewController {
 }
 
 //#Preview {
-//    MainViewController()
+//    EntranceViewController()
 //}
 
