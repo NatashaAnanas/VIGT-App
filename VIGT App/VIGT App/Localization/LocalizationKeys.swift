@@ -12,6 +12,9 @@ enum Localization: String {
 
     case mySklad
     case hello
+    case password
+    case email
+    case registration
 }
 
 // MARK: - Localization value with params
