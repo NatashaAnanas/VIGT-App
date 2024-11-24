@@ -12,7 +12,7 @@ final class RegistrationViewController1: UIViewController {
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.font = .systemFont(ofSize: 16)
-        textField.placeholder = "e-mail"
+        textField.placeholder = Localization.email.rawValue
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -22,7 +22,7 @@ final class RegistrationViewController1: UIViewController {
     
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.placeholder = "Пароль"
+        textField.placeholder = Localization.password.rawValue
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -34,7 +34,7 @@ final class RegistrationViewController1: UIViewController {
     
     let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Зарегистрироваться", for: .normal)
+        button.setTitle(Localization.registration.rawValue, for: .normal)
         button.backgroundColor = .none
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
@@ -44,7 +44,7 @@ final class RegistrationViewController1: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = "E-mail уже используется"
+        label.text = Localization.emailIsAlreadyInUse.rawValue
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -87,11 +87,11 @@ final class RegistrationViewController1: UIViewController {
                 UserDefaults.standard.set(password, forKey: email)
                 dismiss(animated: true)
             } else {
-                errorLabel.text = "E-mail уже используется"
+                errorLabel.text = Localization.emailIsAlreadyInUse.rawValue
                 errorLabel.isHidden = false
             }
         } else {
-            errorLabel.text = "Заполните все поля"
+            errorLabel.text = Localization.fillInAllFields.rawValue
             errorLabel.isHidden = false
         }
     }
