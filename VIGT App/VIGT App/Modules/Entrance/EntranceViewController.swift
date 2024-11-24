@@ -131,11 +131,8 @@ final class EntranceViewController: UIViewController {
     
     @objc private func registrationButtonAction() {
         let registrationVC = RegistrationViewController1()
-        //navigationController?.pushViewController(registrationVC, animated: true)
         registrationVC.modalPresentationStyle = .formSheet
-        //crash show -> because present
         show(registrationVC, sender: nil)
-        //present(registrationVC, animated: true, completion: nil)
         
     }
 }
