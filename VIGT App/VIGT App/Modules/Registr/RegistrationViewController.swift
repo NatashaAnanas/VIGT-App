@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RegistrationViewController1: UIViewController {
+final class RegistrationViewController: UIViewController {
     
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
@@ -102,7 +102,7 @@ final class RegistrationViewController1: UIViewController {
     }
 }
 
-extension RegistrationViewController1 {
+extension RegistrationViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
