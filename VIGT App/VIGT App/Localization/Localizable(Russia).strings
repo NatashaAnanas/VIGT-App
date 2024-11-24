@@ -2,3 +2,10 @@
 
 "mySklad" = "Мой Склад";
 "hello" = "Привет";
+"password" = "Пароль";
+"email" = "e-mail";
+"registration" = "Зарегистрироваться";
+"emailIsAlreadyInUse" = "E-mail уже используется";
+"fillInAllFields" = "Заполните все поля";
+"wrongLoginOrPassword" = "Неверный логин или пароль";
+"entrance" = "Вход";

@@ -18,7 +18,7 @@ final class EntranceViewController: UIViewController {
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.font = .systemFont(ofSize: 16)
-        textField.placeholder = "e-mail"
+        textField.placeholder = Localization.email.rawValue
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -28,7 +28,7 @@ final class EntranceViewController: UIViewController {
     
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.placeholder = "Пароль"
+        textField.placeholder = Localization.password.rawValue
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -39,7 +39,7 @@ final class EntranceViewController: UIViewController {
     
     let entranceButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Вход", for: .normal)
+        button.setTitle(Localization.entrance.rawValue, for: .normal)
         button.backgroundColor = .lightText
         button.layer.cornerRadius = 12
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
@@ -50,7 +50,7 @@ final class EntranceViewController: UIViewController {
     
     let registrationButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Регистрация", for: .normal)
+        button.setTitle(Localization.registration.rawValue, for: .normal)
         button.backgroundColor = .none
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
@@ -60,7 +60,7 @@ final class EntranceViewController: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Неверный пароль"
+        label.text = Localization.wrongLoginOrPassword.rawValue
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -115,12 +115,12 @@ final class EntranceViewController: UIViewController {
                 errorLabel.isHidden = true
                 goToMainVC()
             } else {
-                errorLabel.text = "Неверный логин или пароль"
+                errorLabel.text = Localization.wrongLoginOrPassword.rawValue
                 errorLabel.isHidden = false
             }
             
         } else {
-            errorLabel.text = "Заполните все поля"
+            errorLabel.text = Localization.fillInAllFields.rawValue
             errorLabel.isHidden = false
         }
     }
