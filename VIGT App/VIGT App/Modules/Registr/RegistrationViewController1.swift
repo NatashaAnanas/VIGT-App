@@ -75,22 +75,22 @@ extension RegistrationViewController1 {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -32),
-            emailTextField.widthAnchor.constraint(equalToConstant: 180),
-            emailTextField.heightAnchor.constraint(equalToConstant: 32)
+            emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -.spacing32),
+            emailTextField.widthAnchor.constraint(equalToConstant: .spacing184),
+            emailTextField.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
         
         NSLayoutConstraint.activate([
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 32),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 180),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 32)
+            passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: .spacing32),
+            passwordTextField.widthAnchor.constraint(equalToConstant: .spacing184),
+            passwordTextField.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
         
         NSLayoutConstraint.activate([
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 8),
-            registerButton.heightAnchor.constraint(equalToConstant: 32)
+            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: .spacing8),
+            registerButton.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
     }
 }
