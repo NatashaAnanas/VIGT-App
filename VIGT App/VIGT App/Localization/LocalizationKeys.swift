@@ -15,6 +15,10 @@ enum Localization: String {
     case password
     case email
     case registration
+    case emailIsAlreadyInUse
+    case fillInAllFields
+    case wrongLoginOrPassword
+    case entrance
 }
 
 // MARK: - Localization value with params

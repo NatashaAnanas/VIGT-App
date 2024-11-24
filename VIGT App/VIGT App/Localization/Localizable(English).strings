@@ -4,4 +4,8 @@
 "hello" = "Hello";
 "password" = "Password";
 "email" = "e-mail";
-"registration" = "Registration"
+"registration" = "Registration";
+"emailIsAlreadyInUse" = "E-mail is already in use";
+"fillInAllFields" = "Fill in all fields";
+"wrongLoginOrPassword" = "Wrong login or password";
+"entrance" = "Entrance";

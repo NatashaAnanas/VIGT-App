@@ -44,7 +44,7 @@ final class RegistrationViewController1: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = "E-mail уже используется"
+        label.text = Localization.emailIsAlreadyInUse.rawValue
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -87,11 +87,11 @@ final class RegistrationViewController1: UIViewController {
                 UserDefaults.standard.set(password, forKey: email)
                 dismiss(animated: true)
             } else {
-                errorLabel.text = "E-mail уже используется"
+                errorLabel.text = Localization.emailIsAlreadyInUse.rawValue
                 errorLabel.isHidden = false
             }
         } else {
-            errorLabel.text = "Заполните все поля"
+            errorLabel.text = Localization.fillInAllFields.rawValue
             errorLabel.isHidden = false
         }
     }
