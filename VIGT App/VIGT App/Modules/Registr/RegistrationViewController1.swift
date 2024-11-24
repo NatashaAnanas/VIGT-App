@@ -42,6 +42,17 @@ final class RegistrationViewController1: UIViewController {
         return button
     }()
     
+    let errorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "E-mail уже используется"
+        label.textColor = .red
+        label.isHidden = true
+        label.contentMode = .center
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -50,7 +61,9 @@ final class RegistrationViewController1: UIViewController {
     private func setupUI() {
         view.addSubviews(emailTextField,
                          passwordTextField,
-                         registerButton)
+                         registerButton,
+                         errorLabel
+        )
         
         view.backgroundColor = .init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.9)
         
@@ -64,8 +77,27 @@ final class RegistrationViewController1: UIViewController {
                                  for: .touchUpInside)
     }
     
+    private func writeUserData() {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text  ?? ""
+        
+        if (!email.isEmpty && !password.isEmpty) {
+            if UserDefaults.standard.object(forKey: email) == nil {
+                errorLabel.isHidden = true
+                UserDefaults.standard.set(password, forKey: email)
+                dismiss(animated: true)
+            } else {
+                errorLabel.text = "E-mail уже используется"
+                errorLabel.isHidden = false
+            }
+        } else {
+            errorLabel.text = "Заполните все поля"
+            errorLabel.isHidden = false
+        }
+    }
+    
     @objc private func registrationButtonAction() {
-        dismiss(animated: true)
+        writeUserData()
         
     }
 }
@@ -91,6 +123,12 @@ extension RegistrationViewController1 {
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: .spacing8),
             registerButton.heightAnchor.constraint(equalToConstant: .spacing32)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing16),
+            errorLabel.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
     }
 }
