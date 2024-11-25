@@ -98,9 +98,8 @@ final class EntranceViewController: UIViewController {
     }
     
     private func goToMainVC() {
-        // TODO: - доделать переход
-        let mainVC = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainVC)
+        let mainTabBarVC = MainTabBarController()
+        let navigationController = UINavigationController(rootViewController: mainTabBarVC)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
         

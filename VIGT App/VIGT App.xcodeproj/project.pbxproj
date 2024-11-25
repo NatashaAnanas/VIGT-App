@@ -21,6 +21,7 @@
 		950C17882CF34A2800F1454B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17872CF34A2700F1454B /* MainViewController.swift */; };
 		950C178A2CF34FFE00F1454B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C17892CF34FFE00F1454B /* Main.storyboard */; };
 		950C17AE2CF3D3F500F1454B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17B02CF3D3F500F1454B /* Localizable.strings */; };
+		95123DD72CF4808500118E4D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95123DD62CF4808500118E4D /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		950C17AF2CF3D3F500F1454B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		950C17B12CF3D49600F1454B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		950C17B22CF3D49600F1454B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95123DD62CF4808500118E4D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +154,18 @@
 		950C17862CF349EF00F1454B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				95123DD32CF4801600118E4D /* TabBar */,
 				950C17872CF34A2700F1454B /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		95123DD32CF4801600118E4D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				95123DD62CF4808500118E4D /* MainTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			files = (
 				950C17822CF2914D00F1454B /* CGFloat+extension.swift in Sources */,
 				950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */,
+				95123DD72CF4808500118E4D /* MainTabBarController.swift in Sources */,
 				950C17772CF2720400F1454B /* CustomTextField.swift in Sources */,
 				950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */,
 				950C175E2CEFF32D00F1454B /* UIView+extension.swift in Sources */,
