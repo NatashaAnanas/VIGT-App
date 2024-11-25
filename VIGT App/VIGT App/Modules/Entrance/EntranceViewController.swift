@@ -18,7 +18,7 @@ final class EntranceViewController: UIViewController {
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.font = .systemFont(ofSize: 16)
-        textField.placeholder = Localization.email.rawValue
+        textField.placeholder = Localization.email.value
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -28,7 +28,7 @@ final class EntranceViewController: UIViewController {
     
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
-        textField.placeholder = Localization.password.rawValue
+        textField.placeholder = Localization.password.value
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -39,7 +39,7 @@ final class EntranceViewController: UIViewController {
     
     let entranceButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle(Localization.entrance.rawValue, for: .normal)
+        button.setTitle(Localization.entrance.value, for: .normal)
         button.backgroundColor = .lightText
         button.layer.cornerRadius = 12
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
@@ -50,9 +50,9 @@ final class EntranceViewController: UIViewController {
     
     let registrationButton: UIButton = {
         let button = UIButton()
-        button.setTitle(Localization.registration.rawValue, for: .normal)
+        button.setTitle(Localization.registration.value, for: .normal)
         button.backgroundColor = .none
-        button.titleLabel?.textColor = .darkGray
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -60,7 +60,7 @@ final class EntranceViewController: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = Localization.wrongLoginOrPassword.rawValue
+        label.text = Localization.wrongLoginOrPassword.value
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -115,12 +115,12 @@ final class EntranceViewController: UIViewController {
                 errorLabel.isHidden = true
                 goToMainVC()
             } else {
-                errorLabel.text = Localization.wrongLoginOrPassword.rawValue
+                errorLabel.text = Localization.wrongLoginOrPassword.value
                 errorLabel.isHidden = false
             }
             
         } else {
-            errorLabel.text = Localization.fillInAllFields.rawValue
+            errorLabel.text = Localization.fillInAllFields.value
             errorLabel.isHidden = false
         }
     }
@@ -171,13 +171,8 @@ extension EntranceViewController {
         NSLayoutConstraint.activate([
             registrationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registrationButton.topAnchor.constraint(equalTo: entranceButton.bottomAnchor, constant: .spacing8),
-            registrationButton.widthAnchor.constraint(equalToConstant: .spacing184),
             registrationButton.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
     }
 }
-
-//#Preview {
-//    EntranceViewController()
-//}
 

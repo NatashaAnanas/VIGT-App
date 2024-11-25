@@ -10,8 +10,6 @@ import SwiftUI
 enum Localization: String {
     // MARK: - Localization / General
 
-    case mySklad
-    case hello
     case password
     case email
     case registration
