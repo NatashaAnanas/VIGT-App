@@ -1,7 +1,5 @@
-// MARK: - General
+// MARK: - Registration
 
-"mySklad" = "Мой Склад";
-"hello" = "Привет";
 "password" = "Пароль";
 "email" = "e-mail";
 "registration" = "Зарегистрироваться";

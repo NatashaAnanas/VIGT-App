@@ -12,7 +12,7 @@ final class RegistrationViewController: UIViewController {
     let emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.font = .systemFont(ofSize: 16)
-        textField.placeholder = Localization.email.rawValue
+        textField.placeholder = Localization.email.value
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -23,7 +23,7 @@ final class RegistrationViewController: UIViewController {
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.font = .systemFont(ofSize: 16)
-        textField.placeholder = Localization.password.rawValue
+        textField.placeholder = Localization.password.value
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
@@ -34,7 +34,7 @@ final class RegistrationViewController: UIViewController {
     
     let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle(Localization.registration.rawValue, for: .normal)
+        button.setTitle(Localization.registration.value, for: .normal)
         button.backgroundColor = .none
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
@@ -44,7 +44,7 @@ final class RegistrationViewController: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = Localization.emailIsAlreadyInUse.rawValue
+        label.text = Localization.emailIsAlreadyInUse.value
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -87,11 +87,11 @@ final class RegistrationViewController: UIViewController {
                 UserDefaults.standard.set(password, forKey: email)
                 dismiss(animated: true)
             } else {
-                errorLabel.text = Localization.emailIsAlreadyInUse.rawValue
+                errorLabel.text = Localization.emailIsAlreadyInUse.value
                 errorLabel.isHidden = false
             }
         } else {
-            errorLabel.text = Localization.fillInAllFields.rawValue
+            errorLabel.text = Localization.fillInAllFields.value
             errorLabel.isHidden = false
         }
     }
