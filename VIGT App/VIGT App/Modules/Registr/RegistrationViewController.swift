@@ -259,6 +259,8 @@ extension RegistrationViewController: UITextFieldDelegate {
         case .password:
             if isValidPassword(textField) {
                 rightPassword()
+            } else {
+                errorSmallPassword()
             }
         default: break
         }
