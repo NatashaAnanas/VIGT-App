@@ -83,7 +83,7 @@ final class RegistrationViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -97,15 +97,17 @@ final class RegistrationViewController: UIViewController {
                          registerButton,
                          errorEmailLabel,
                          errorPasswordLabel,
-                         errorLabel
-        )
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
+                         errorLabel)
         view.backgroundColor = .init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.9)
         
+        addRecognizer()
         addTargets()
         setupConstraints()
+    }
+    
+    private func addRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     private func addTargets() {
@@ -213,24 +215,14 @@ extension RegistrationViewController: UITextFieldDelegate {
     private func isValidPassword(_ password: UITextField) -> Bool {
         return password.text?.count ?? 0 > 7
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch RegistrationType(rawValue: textField.tag) {
         case .email:
-            if isValidEmail(textField) {
-                rightEmail()
-            } else {
-                wrongEmail()
-                return
-            }
+            isValidEmail(textField) ? rightEmail() : wrongEmail()
         case .password:
-            if isValidPassword(textField) {
-                rightPassword()
-            } else {
-                errorSmallPassword()
-            }
+            isValidPassword(textField) ? rightPassword() : errorSmallPassword()
         default: break
-            
         }
     }
     
@@ -238,15 +230,15 @@ extension RegistrationViewController: UITextFieldDelegate {
         switch RegistrationType(rawValue: textField.tag) {
         case .email:
             let allowedCharacters = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.").inverted
-                return string.rangeOfCharacter(from: allowedCharacters) == nil
+            return string.rangeOfCharacter(from: allowedCharacters) == nil
         case .password:
             let allowedCharacters = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.!#$%^&*()-_=+").inverted
-                return string.rangeOfCharacter(from: allowedCharacters) == nil
+            return string.rangeOfCharacter(from: allowedCharacters) == nil
         default:
             return false
         }
     }
-     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch RegistrationType(rawValue: textField.tag) {
         case .email:
