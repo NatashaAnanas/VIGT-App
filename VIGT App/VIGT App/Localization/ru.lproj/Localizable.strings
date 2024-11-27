@@ -4,6 +4,9 @@
 "email" = "e-mail";
 "registration" = "Зарегистрироваться";
 "emailIsAlreadyInUse" = "E-mail уже используется";
-"fillInAllFields" = "Заполните все поля";
-"wrongLoginOrPassword" = "Неверный логин или пароль";
+"fillInAllFields" = "Введите данные";
+"wrongEmailOrPassword" = "Неверный E-mail или пароль";
 "entrance" = "Вход";
+"wrongEmail" = "Некорректный E-mail";
+"wrongPassword" = "Неверный пароль";
+"passwordIsSmall" = "Пароль слишком короткий";

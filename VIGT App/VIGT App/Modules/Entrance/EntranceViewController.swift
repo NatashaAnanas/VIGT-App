@@ -60,7 +60,7 @@ final class EntranceViewController: UIViewController {
     
     let errorLabel: UILabel = {
         let label = UILabel()
-        label.text = Localization.wrongLoginOrPassword.value
+        label.text = Localization.wrongEmailOrPassword.value
         label.textColor = .red
         label.isHidden = true
         label.contentMode = .center
@@ -75,6 +75,8 @@ final class EntranceViewController: UIViewController {
     }
     
     private func setupUI() {
+        
+        emailTextField.delegate = self
         view.addSubviews(backgroundImageView,
                          emailTextField,
                          passwordTextField,
@@ -114,7 +116,7 @@ final class EntranceViewController: UIViewController {
                 errorLabel.isHidden = true
                 goToMainVC()
             } else {
-                errorLabel.text = Localization.wrongLoginOrPassword.value
+                errorLabel.text = Localization.wrongEmailOrPassword.value
                 errorLabel.isHidden = false
             }
             
@@ -175,3 +177,10 @@ extension EntranceViewController {
     }
 }
 
+extension EntranceViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.").inverted
+        return string.rangeOfCharacter(from: allowedCharacters) == nil
+    }
+}

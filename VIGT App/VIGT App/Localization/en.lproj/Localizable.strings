@@ -5,5 +5,8 @@
 "registration" = "Registration";
 "emailIsAlreadyInUse" = "E-mail is already in use";
 "fillInAllFields" = "Fill in all fields";
-"wrongLoginOrPassword" = "Wrong login or password";
+"wrongEmailOrPassword" = "Wrong E-mail or password";
 "entrance" = "Entrance";
+"wrongEmail" = "Wrong E-mail";
+"wrongPassword" = "Wrong Password";
+"passwordIsSmall" = "Password is too short";
