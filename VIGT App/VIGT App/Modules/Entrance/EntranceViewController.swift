@@ -104,7 +104,6 @@ final class EntranceViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: mainTabBarVC)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
-        
     }
     
     private func readUserData() {
