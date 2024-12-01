@@ -10,3 +10,5 @@
 "wrongEmail" = "Некорректный E-mail";
 "wrongPassword" = "Неверный пароль";
 "passwordIsSmall" = "Пароль слишком короткий";
+"enterEmail" =  "Введите E-mail";
+"enterPassword" = "Введите пароль";

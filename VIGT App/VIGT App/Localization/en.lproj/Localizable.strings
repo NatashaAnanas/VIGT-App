@@ -10,3 +10,5 @@
 "wrongEmail" = "Wrong E-mail";
 "wrongPassword" = "Wrong Password";
 "passwordIsSmall" = "Password is too short";
+"enterEmail" = "Enter E-mail";
+"enterPassword" = "Enter password";

@@ -9,6 +9,11 @@ import UIKit
 
 final class EntranceViewController: UIViewController {
     
+    enum RegistrationType: Int {
+        case email
+        case password
+    }
+    
     private lazy var backgroundImageView = {
         let imageView = UIImageView(frame: view.bounds)
         imageView.image = UIImage(named: IconNames.mainBackgroundImage2)
@@ -22,6 +27,7 @@ final class EntranceViewController: UIViewController {
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
+        textField.tag = 0
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -32,6 +38,7 @@ final class EntranceViewController: UIViewController {
         textField.backgroundColor = .init(red: 1, green: 1, blue: 1, alpha: 0.5)
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
+        textField.tag = 1
         textField.textPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -69,20 +76,44 @@ final class EntranceViewController: UIViewController {
         return label
     }()
     
+    let errorEmailLabel: UILabel = {
+        let label = UILabel()
+        label.text = Localization.enterEmail.value
+        label.textColor = .red
+        label.isHidden = true
+        label.contentMode = .center
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let errorPasswordLabel: UILabel = {
+        let label = UILabel()
+        label.text = Localization.enterPassword.value
+        label.textColor = .red
+        label.isHidden = true
+        label.contentMode = .center
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
     private func setupUI() {
-        
         emailTextField.delegate = self
+        passwordTextField.delegate = self
         view.addSubviews(backgroundImageView,
                          emailTextField,
                          passwordTextField,
                          registrationButton,
                          entranceButton,
-                         errorLabel)
+                         errorLabel,
+                         errorEmailLabel,
+                         errorPasswordLabel)
         
         view.sendSubviewToBack(backgroundImageView)
         
@@ -107,26 +138,35 @@ final class EntranceViewController: UIViewController {
     }
     
     private func readUserData() {
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text  ?? ""
-        
-        if (!email.isEmpty && !password.isEmpty) {
-            if UserDefaults.standard.string(forKey: email) == password {
-                errorLabel.isHidden = true
-                goToMainVC()
-            } else {
-                errorLabel.text = Localization.wrongEmailOrPassword.value
-                errorLabel.isHidden = false
-            }
-            
+        if UserDefaults.standard.string(forKey: emailTextField.text!) == passwordTextField.text! {
+            errorLabel.isHidden = true
+            goToMainVC()
         } else {
-            errorLabel.text = Localization.fillInAllFields.value
+            errorLabel.text = Localization.wrongEmailOrPassword.value
             errorLabel.isHidden = false
         }
     }
     
+    private func isValidEmail(_ textField: UITextField) -> Bool {
+        let email = textField.text ?? ""
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    private func isValidPassword(_ password: UITextField) -> Bool {
+        return password.text?.count ?? 0 > 7
+    }
+    
     @objc private func entranceButtonAction() {
-        readUserData()
+        errorEmailLabel.isHidden = emailTextField.text?.count ?? 0 > 0
+        errorPasswordLabel.isHidden = passwordTextField.text?.count ?? 0 > 0
+        
+        if (isValidEmail(emailTextField) && isValidPassword(passwordTextField)) {
+            readUserData()
+        } else {
+            errorLabel.isHidden = !(emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0)
+        }
     }
     
     @objc private func registrationButtonAction() {
@@ -143,7 +183,7 @@ extension EntranceViewController {
         
         NSLayoutConstraint.activate([
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing16),
+            errorLabel.bottomAnchor.constraint(equalTo: errorEmailLabel.topAnchor, constant: -.spacing8),
             errorLabel.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
         
@@ -173,13 +213,28 @@ extension EntranceViewController {
             registrationButton.topAnchor.constraint(equalTo: entranceButton.bottomAnchor, constant: .spacing8),
             registrationButton.heightAnchor.constraint(equalToConstant: .spacing32)
         ])
+        
+        NSLayoutConstraint.activate([
+            errorEmailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorEmailLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing8)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorPasswordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorPasswordLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -.spacing8)
+        ])
     }
 }
 
 extension EntranceViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.").inverted
-        return string.rangeOfCharacter(from: allowedCharacters) == nil
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        errorLabel.isHidden = true
+        switch RegistrationType(rawValue: textField.tag) {
+        case .email:
+            errorEmailLabel.isHidden = textField.text?.count ?? 0 > 0
+        case .password:
+            errorPasswordLabel.isHidden = textField.text?.count ?? 0 > 0
+        default: break
+        }
     }
 }
