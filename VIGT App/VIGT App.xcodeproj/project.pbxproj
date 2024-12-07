@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9501CF4F2D04F64000B5A7C6 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501CF4E2D04F64000B5A7C6 /* BaseTableViewCell.swift */; };
+		9501CF512D04F9C400B5A7C6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501CF502D04F9C400B5A7C6 /* BaseCollectionViewCell.swift */; };
 		950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C17482CEFC99700F1454B /* AppDelegate.swift */; };
 		950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C174A2CEFC99700F1454B /* SceneDelegate.swift */; };
 		950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C174C2CEFC99700F1454B /* EntranceViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9501CF4E2D04F64000B5A7C6 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		9501CF502D04F9C400B5A7C6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		950C17452CEFC99700F1454B /* VIGT App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIGT App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950C17482CEFC99700F1454B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		950C174A2CEFC99700F1454B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */,
+				9501CF4E2D04F64000B5A7C6 /* BaseTableViewCell.swift */,
+				9501CF502D04F9C400B5A7C6 /* BaseCollectionViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				950C17822CF2914D00F1454B /* CGFloat+extension.swift in Sources */,
+				9501CF512D04F9C400B5A7C6 /* BaseCollectionViewCell.swift in Sources */,
 				950C174D2CEFC99700F1454B /* EntranceViewController.swift in Sources */,
 				95123DD72CF4808500118E4D /* MainTabBarController.swift in Sources */,
 				950C17772CF2720400F1454B /* CustomTextField.swift in Sources */,
@@ -271,6 +278,7 @@
 				950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */,
 				950C17662CF0707D00F1454B /* LocalizationKeys.swift in Sources */,
 				950C17612CEFF37800F1454B /* IconNames.swift in Sources */,
+				9501CF4F2D04F64000B5A7C6 /* BaseTableViewCell.swift in Sources */,
 				950C17882CF34A2800F1454B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

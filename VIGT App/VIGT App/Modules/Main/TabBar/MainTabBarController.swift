@@ -38,7 +38,11 @@ final class MainTabBarController: UITabBarController {
                                  title: String,
                                  imageName: String,
                                  tag: Int) -> UIViewController {
-        viewController.tabBarItem = UITabBarItem(title: title, image: UIImage(systemName: imageName), tag: tag)
+        viewController.tabBarItem = UITabBarItem(
+            title: title,
+            image: UIImage(systemName: imageName),
+            tag: tag
+        )
         return viewController
     }
 }

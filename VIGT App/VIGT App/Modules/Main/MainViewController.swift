@@ -50,6 +50,10 @@ final class MainViewController: UIViewController {
             MorningTableViewCell.self,
             forCellReuseIdentifier: MorningTableViewCell.identifier
         )
+        mainTableView.register(
+            BaseTableViewCell.self,
+            forCellReuseIdentifier: BaseTableViewCell.identifier
+        )
         view.addSubview(mainTableView)
     }
 }
@@ -96,12 +100,16 @@ extension MainViewController: UITableViewDataSource {
             cell.configure(greeting: "Good Morning!", clock: "8:34")
             
             return cell
+            
         case .collectionCell:
             // MARK: [VIGT-13] - Добавить ячейку с коллекцией
-            let cell = UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: BaseTableViewCell.identifier,
+                for: indexPath
+            ) as? BaseTableViewCell else {
+                return UITableViewCell()
+            }
             cell.selectionStyle = .none
-            cell.backgroundColor = .clear
-            cell.contentView.backgroundColor = .clear
             
             return cell
         }
@@ -111,7 +119,13 @@ extension MainViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension MainViewController: UITableViewDelegate {
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch Sections.allCases[indexPath.section] {
+//        case .
+//        default:
+//            break
+//        }
+//    }
 }
 
 // TODO: - вынести в отдельный файл
