@@ -22,6 +22,7 @@
 		950C178A2CF34FFE00F1454B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C17892CF34FFE00F1454B /* Main.storyboard */; };
 		950C17AE2CF3D3F500F1454B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17B02CF3D3F500F1454B /* Localizable.strings */; };
 		95123DD72CF4808500118E4D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95123DD62CF4808500118E4D /* MainTabBarController.swift */; };
+		95123DE32D04D69B00118E4D /* MorningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		950C17B12CF3D49600F1454B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		950C17B22CF3D49600F1454B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95123DD62CF4808500118E4D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		950C17472CEFC99700F1454B /* VIGT App */ = {
 			isa = PBXGroup;
 			children = (
+				95123DE02D04D64200118E4D /* Cells */,
 				950C17792CF280AE00F1454B /* Modules */,
 				950C17642CF0705C00F1454B /* Localization */,
 				950C175F2CEFF36000F1454B /* Helpers */,
@@ -168,6 +171,22 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		95123DE02D04D64200118E4D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95123DE12D04D65100118E4D /* Main */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		95123DE12D04D65100118E4D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +266,7 @@
 				950C17772CF2720400F1454B /* CustomTextField.swift in Sources */,
 				950C17492CEFC99700F1454B /* AppDelegate.swift in Sources */,
 				950C175E2CEFF32D00F1454B /* UIView+extension.swift in Sources */,
+				95123DE32D04D69B00118E4D /* MorningTableViewCell.swift in Sources */,
 				950C17852CF2966900F1454B /* RegistrationViewController.swift in Sources */,
 				950C174B2CEFC99700F1454B /* SceneDelegate.swift in Sources */,
 				950C17662CF0707D00F1454B /* LocalizationKeys.swift in Sources */,

@@ -12,6 +12,8 @@ import UIKit
 extension CGFloat {
     /// 8.0
     static let spacing8: CGFloat = 8.0
+    /// 12.0
+    static let spacing12: CGFloat = spacing8*1.5
     /// 16.0
     static let spacing16: CGFloat = spacing8*2
     /// 24.0

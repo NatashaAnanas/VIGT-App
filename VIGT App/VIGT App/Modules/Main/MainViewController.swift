@@ -9,20 +9,48 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    private enum Sections: CaseIterable {
+        case greetingCell
+        case collectionCell
+    }
+    
     private let mainTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
+    private lazy var backgroundImageView = {
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: IconNames.mainBackgroundImage)
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        setupUI()
+    }
+    
+    private func setupUI() {
+        view.addSubview(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+        setupTableView()
+        setupConstraints()
+    }
+    
+    private func setupTableView() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
+        mainTableView.backgroundColor = .clear
+        mainTableView.separatorStyle = .none
+        
+        mainTableView.register(
+            MorningTableViewCell.self,
+            forCellReuseIdentifier: MorningTableViewCell.identifier
+        )
         view.addSubview(mainTableView)
-        setupConstraints()
     }
 }
 
@@ -43,14 +71,40 @@ extension MainViewController {
 // MARK: - UITableViewDataSource
 
 extension MainViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        Sections.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
+        switch Sections.allCases[section] {
+        case .greetingCell: 1
+        case .collectionCell: 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
-        return cell
+        switch Sections.allCases[indexPath.section] {
+        case .greetingCell:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: MorningTableViewCell.identifier,
+                for: indexPath
+            ) as? MorningTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.configure(greeting: "Good Morning!", clock: "8:34")
+            
+            return cell
+        case .collectionCell:
+            // MARK: [VIGT-13] - Добавить ячейку с коллекцией
+            let cell = UITableViewCell()
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
+            
+            return cell
+        }
     }
 }
 
