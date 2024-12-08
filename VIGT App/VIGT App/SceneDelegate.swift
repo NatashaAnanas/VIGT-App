@@ -18,6 +18,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         let viewController = EntranceViewController()
+//        let viewController = MainViewController() // Оставила для быстрой замены
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
