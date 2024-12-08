@@ -10,14 +10,13 @@ import UIKit
 final class MorningTableViewCell: UITableViewCell {
     
     static let identifier = "MorningTableViewCell"
-    
+
     private let greetingLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -27,7 +26,6 @@ final class MorningTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 56, weight: .light)
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -54,7 +52,7 @@ final class MorningTableViewCell: UITableViewCell {
     private func setupUI() {
         backgroundColor = .clear
         contentView.backgroundColor = .white.withAlphaComponent(0.2)
-        addSubviews(greetingLabel, clockLabel)
+        addSubviewsWithConstraints(greetingLabel, clockLabel)
         setupConstraints()
     }
 }

@@ -15,7 +15,6 @@ final class BaseCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.layer.cornerRadius = 16
         view.backgroundColor = .white.withAlphaComponent(0.5)
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -30,7 +29,7 @@ final class BaseCollectionViewCell: UICollectionViewCell {
      }
     
     private func setupUI() {
-        addSubview(mainView)
+        addSubviewsWithConstraints(mainView)
     }
 }
 
