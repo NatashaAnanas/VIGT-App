@@ -40,7 +40,6 @@ final class MainViewController: UIViewController {
     }
     
     private func setupTableView() {
-        mainTableView.delegate = self
         mainTableView.dataSource = self
         
         mainTableView.backgroundColor = .clear
@@ -97,12 +96,12 @@ extension MainViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
+            // MARK: Вынести в константы/ сделать текущее время
             cell.configure(greeting: "Good Morning!", clock: "8:34")
             
             return cell
             
         case .collectionCell:
-            // MARK: [VIGT-13] - Добавить ячейку с коллекцией
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: BaseTableViewCell.identifier,
                 for: indexPath
@@ -116,40 +115,28 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension MainViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch Sections.allCases[indexPath.section] {
-//        case .
-//        default:
-//            break
+// TODO: - вынести в отдельный файл
+//extension MainViewController {
+//    private func setupInitialStateNotificationCenter() {
+//        NotificationCenter.default
+//            .addObserver(self,
+//                         selector: #selector(keyboardWillShow),
+//                         name: UIResponder.keyboardWillShowNotification,
+//                         object: nil)
+//        NotificationCenter.default
+//            .addObserver(self,
+//                         selector: #selector(keyboardWillHide),
+//                         name: UIResponder.keyboardWillHideNotification,
+//                         object: nil)
+//    }
+//    
+//    @objc private func keyboardWillShow(notification: Notification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            mainTableView.contentInset.bottom = keyboardSize.height
 //        }
 //    }
-}
-
-// TODO: - вынести в отдельный файл
-extension MainViewController {
-    private func setupInitialStateNotificationCenter() {
-        NotificationCenter.default
-            .addObserver(self,
-                         selector: #selector(keyboardWillShow),
-                         name: UIResponder.keyboardWillShowNotification,
-                         object: nil)
-        NotificationCenter.default
-            .addObserver(self,
-                         selector: #selector(keyboardWillHide),
-                         name: UIResponder.keyboardWillHideNotification,
-                         object: nil)
-    }
-    
-    @objc private func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            mainTableView.contentInset.bottom = keyboardSize.height
-        }
-    }
-    
-    @objc private func keyboardWillHide(notification: Notification) {
-        mainTableView.contentInset.bottom = 0
-    }
-}
+//    
+//    @objc private func keyboardWillHide(notification: Notification) {
+//        mainTableView.contentInset.bottom = 0
+//    }
+//}
