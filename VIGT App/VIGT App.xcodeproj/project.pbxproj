@@ -25,6 +25,7 @@
 		950C17AE2CF3D3F500F1454B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 950C17B02CF3D3F500F1454B /* Localizable.strings */; };
 		95123DD72CF4808500118E4D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95123DD62CF4808500118E4D /* MainTabBarController.swift */; };
 		95123DE32D04D69B00118E4D /* MorningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */; };
+		9575151C2D05C25D00F0CE21 /* FrameLayout in Resources */ = {isa = PBXBuildFile; fileRef = 9575151B2D05C25C00F0CE21 /* FrameLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		950C17B22CF3D49600F1454B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95123DD62CF4808500118E4D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		95123DE22D04D69B00118E4D /* MorningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningTableViewCell.swift; sourceTree = "<group>"; };
+		9575151B2D05C25C00F0CE21 /* FrameLayout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FrameLayout; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		950C175F2CEFF36000F1454B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9575151B2D05C25C00F0CE21 /* FrameLayout */,
 				950C17782CF2721400F1454B /* CustomViews */,
 				950C17602CEFF37800F1454B /* IconNames.swift */,
 			);
@@ -254,6 +257,7 @@
 			files = (
 				950C17552CEFC99B00F1454B /* LaunchScreen.storyboard in Resources */,
 				950C17AE2CF3D3F500F1454B /* Localizable.strings in Resources */,
+				9575151C2D05C25D00F0CE21 /* FrameLayout in Resources */,
 				950C178A2CF34FFE00F1454B /* Main.storyboard in Resources */,
 				950C17522CEFC99B00F1454B /* Assets.xcassets in Resources */,
 			);
