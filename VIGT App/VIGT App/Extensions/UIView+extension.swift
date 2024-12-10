@@ -14,4 +14,11 @@ public extension UIView {
             addSubview(view)
         }
     }
+    
+    func addSubviewsWithConstraints(_ views: UIView...) {
+        for view in views {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(view)
+        }
+    }
 }

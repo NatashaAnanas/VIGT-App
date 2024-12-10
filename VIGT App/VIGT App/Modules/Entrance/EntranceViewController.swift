@@ -28,7 +28,6 @@ final class EntranceViewController: UIViewController {
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
         textField.tag = 0
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -40,7 +39,6 @@ final class EntranceViewController: UIViewController {
         textField.tintColor = .darkGray
         textField.tag = 1
         textField.textPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -51,7 +49,6 @@ final class EntranceViewController: UIViewController {
         button.layer.cornerRadius = 12
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.setTitleColor(.darkText, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -61,7 +58,6 @@ final class EntranceViewController: UIViewController {
         button.backgroundColor = .none
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -72,7 +68,6 @@ final class EntranceViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -83,7 +78,6 @@ final class EntranceViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -94,7 +88,6 @@ final class EntranceViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -106,14 +99,16 @@ final class EntranceViewController: UIViewController {
     private func setupUI() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        view.addSubviews(backgroundImageView,
-                         emailTextField,
-                         passwordTextField,
-                         registrationButton,
-                         entranceButton,
-                         errorLabel,
-                         errorEmailLabel,
-                         errorPasswordLabel)
+        view.addSubviewsWithConstraints(
+            backgroundImageView,
+            emailTextField,
+            passwordTextField,
+            registrationButton,
+            entranceButton,
+            errorLabel,
+            errorEmailLabel,
+            errorPasswordLabel
+        )
         
         view.sendSubviewToBack(backgroundImageView)
         
@@ -126,8 +121,8 @@ final class EntranceViewController: UIViewController {
                                      action: #selector(registrationButtonAction),
                                      for: .touchUpInside)
         entranceButton.addTarget(self,
-                                     action: #selector(entranceButtonAction),
-                                     for: .touchUpInside)
+                                 action: #selector(entranceButtonAction),
+                                 for: .touchUpInside)
     }
     
     private func goToMainVC() {

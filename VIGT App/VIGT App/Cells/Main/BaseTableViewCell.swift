@@ -49,12 +49,11 @@ final class BaseTableViewCell: UITableViewCell {
         
         baseCollectionView.backgroundColor = .clear
         baseCollectionView.showsHorizontalScrollIndicator = false
-        baseCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         baseCollectionView.delegate = self
         baseCollectionView.dataSource = self
         
-        addSubview(baseCollectionView)
+        addSubviewsWithConstraints(baseCollectionView)
     }
     
     private func setupUI() {

@@ -23,7 +23,6 @@ final class RegistrationViewController: UIViewController {
         textField.layer.cornerRadius = 8
         textField.tintColor = .darkGray
         textField.tag = 0
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -36,7 +35,6 @@ final class RegistrationViewController: UIViewController {
         textField.tintColor = .darkGray
         textField.textPadding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         textField.tag = 1
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     //TODO: [VIGT-9] - Сделать кастомную кнопку с затемнением при диактивации
@@ -46,7 +44,6 @@ final class RegistrationViewController: UIViewController {
         button.backgroundColor = .none
         button.titleLabel?.textColor = .darkGray
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = true
         return button
     }()
@@ -58,7 +55,6 @@ final class RegistrationViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -69,7 +65,6 @@ final class RegistrationViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -80,7 +75,6 @@ final class RegistrationViewController: UIViewController {
         label.isHidden = true
         label.contentMode = .center
         label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -92,12 +86,14 @@ final class RegistrationViewController: UIViewController {
     private func setupUI() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        view.addSubviews(emailTextField,
-                         passwordTextField,
-                         registerButton,
-                         errorEmailLabel,
-                         errorPasswordLabel,
-                         errorLabel)
+        view.addSubviewsWithConstraints(
+            emailTextField,
+            passwordTextField,
+            registerButton,
+            errorEmailLabel,
+            errorPasswordLabel,
+            errorLabel
+        )
         view.backgroundColor = .init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.9)
         
         addRecognizer()

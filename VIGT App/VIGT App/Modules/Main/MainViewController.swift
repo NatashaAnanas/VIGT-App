@@ -16,7 +16,6 @@ final class MainViewController: UIViewController {
     
     private let mainTableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -33,7 +32,7 @@ final class MainViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(backgroundImageView)
+        view.addSubviewsWithConstraints(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
         setupTableView()
         setupConstraints()
@@ -53,7 +52,7 @@ final class MainViewController: UIViewController {
             BaseTableViewCell.self,
             forCellReuseIdentifier: BaseTableViewCell.identifier
         )
-        view.addSubview(mainTableView)
+        view.addSubviewsWithConstraints(mainTableView)
     }
 }
 
