@@ -37,7 +37,7 @@ final class RegistrationViewController: UIViewController {
         textField.tag = 1
         return textField
     }()
-    //TODO: [VIGT-9] - Сделать кастомную кнопку с затемнением при диактивации
+    
     let registerButton: UIButton = {
         let button = UIButton()
         button.setTitle(Localization.registration.value, for: .normal)
@@ -148,33 +148,23 @@ extension RegistrationViewController {
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -.spacing32),
             emailTextField.widthAnchor.constraint(equalToConstant: .spacing184),
-            emailTextField.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            emailTextField.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: .spacing32),
             passwordTextField.widthAnchor.constraint(equalToConstant: .spacing184),
-            passwordTextField.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            passwordTextField.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: .spacing16),
-            registerButton.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            registerButton.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             errorEmailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorEmailLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing8)
-        ])
-        
-        NSLayoutConstraint.activate([
+            errorEmailLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing8),
+            
             errorPasswordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorPasswordLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -.spacing8)
-        ])
-        
-        NSLayoutConstraint.activate([
+            errorPasswordLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -.spacing8),
+            
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorLabel.bottomAnchor.constraint(equalTo: errorEmailLabel.topAnchor, constant: -.spacing8)
         ])
@@ -260,7 +250,5 @@ extension RegistrationViewController: UITextFieldDelegate {
             }
         default: break
         }
-        
     }
-    
 }

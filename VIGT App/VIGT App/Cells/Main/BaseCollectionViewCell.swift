@@ -41,9 +41,7 @@ private extension BaseCollectionViewCell {
             mainView.topAnchor.constraint(equalTo: topAnchor, constant: .spacing8),
             mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: .spacing8),
             mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -.spacing8),
-            mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.spacing8),
-            mainView.heightAnchor.constraint(equalToConstant: 160),
-            mainView.widthAnchor.constraint(equalToConstant: 70)
+            mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.spacing8)
         ])
     }
 }
