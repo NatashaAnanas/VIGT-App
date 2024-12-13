@@ -168,7 +168,6 @@ final class EntranceViewController: UIViewController {
         let registrationVC = RegistrationViewController()
         registrationVC.modalPresentationStyle = .formSheet
         show(registrationVC, sender: nil)
-        
     }
 }
 
@@ -179,42 +178,30 @@ extension EntranceViewController {
         NSLayoutConstraint.activate([
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorLabel.bottomAnchor.constraint(equalTo: errorEmailLabel.topAnchor, constant: -.spacing8),
-            errorLabel.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            errorLabel.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -.spacing32),
             emailTextField.widthAnchor.constraint(equalToConstant: .spacing184),
-            emailTextField.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            emailTextField.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: .spacing32),
             passwordTextField.widthAnchor.constraint(equalToConstant: .spacing184),
-            passwordTextField.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            passwordTextField.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             entranceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             entranceButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: .spacing40),
             entranceButton.widthAnchor.constraint(equalToConstant: .spacing184),
-            entranceButton.heightAnchor.constraint(equalToConstant: .spacing40)
-        ])
-        
-        NSLayoutConstraint.activate([
+            entranceButton.heightAnchor.constraint(equalToConstant: .spacing40),
+            
             registrationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registrationButton.topAnchor.constraint(equalTo: entranceButton.bottomAnchor, constant: .spacing8),
-            registrationButton.heightAnchor.constraint(equalToConstant: .spacing32)
-        ])
-        
-        NSLayoutConstraint.activate([
+            registrationButton.heightAnchor.constraint(equalToConstant: .spacing32),
+            
             errorEmailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorEmailLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing8)
-        ])
+            errorEmailLabel.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -.spacing8),
         
-        NSLayoutConstraint.activate([
             errorPasswordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorPasswordLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -.spacing8)
         ])
