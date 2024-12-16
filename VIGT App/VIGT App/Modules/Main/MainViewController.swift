@@ -12,6 +12,7 @@ final class MainViewController: UIViewController {
     private enum Sections: CaseIterable {
         case greetingCell
         case collectionCell
+        case tableCell
     }
     
     private let mainTableView: UITableView = {
@@ -52,6 +53,11 @@ final class MainViewController: UIViewController {
             BaseTableViewCell.self,
             forCellReuseIdentifier: BaseTableViewCell.identifier
         )
+        
+        mainTableView.register(
+            RectangleTableViewCell.self,
+            forCellReuseIdentifier: RectangleTableViewCell.identifier
+        )
         view.addSubviewsWithConstraints(mainTableView)
     }
 }
@@ -82,6 +88,7 @@ extension MainViewController: UITableViewDataSource {
         switch Sections.allCases[section] {
         case .greetingCell: 1
         case .collectionCell: 1
+        case .tableCell: 5
         }
     }
     
@@ -108,6 +115,18 @@ extension MainViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
+            
+            return cell
+            
+        case .tableCell:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: RectangleTableViewCell.identifier,
+                for: indexPath
+            ) as? RectangleTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            // MARK: Вынести в константы/ сделать текущее время
             
             return cell
         }

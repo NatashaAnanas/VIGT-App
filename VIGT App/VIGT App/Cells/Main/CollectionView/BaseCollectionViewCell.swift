@@ -21,7 +21,6 @@ final class BaseCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
          super.init(frame: frame)
         setupUI()
-        setupConstraints()
      }
      
      required init?(coder: NSCoder) {
@@ -30,6 +29,7 @@ final class BaseCollectionViewCell: UICollectionViewCell {
     
     private func setupUI() {
         addSubviewsWithConstraints(mainView)
+        setupConstraints()
     }
 }
 
