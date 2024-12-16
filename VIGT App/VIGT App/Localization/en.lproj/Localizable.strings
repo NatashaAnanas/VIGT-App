@@ -1,0 +1,14 @@
+// MARK: - Registration
+
+"password" = "Password";
+"email" = "e-mail";
+"registration" = "Registration";
+"emailIsAlreadyInUse" = "E-mail is already in use";
+"fillInAllFields" = "Fill in all fields";
+"wrongEmailOrPassword" = "Wrong E-mail or password";
+"entrance" = "Entrance";
+"wrongEmail" = "Wrong E-mail";
+"wrongPassword" = "Wrong Password";
+"passwordIsSmall" = "Password is too short";
+"enterEmail" = "Enter E-mail";
+"enterPassword" = "Enter password";

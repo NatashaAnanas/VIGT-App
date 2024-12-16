@@ -1,0 +1,14 @@
+// MARK: - Registration
+
+"password" = "Пароль";
+"email" = "e-mail";
+"registration" = "Зарегистрироваться";
+"emailIsAlreadyInUse" = "E-mail уже используется";
+"fillInAllFields" = "Введите данные";
+"wrongEmailOrPassword" = "Неверный E-mail или пароль";
+"entrance" = "Вход";
+"wrongEmail" = "Некорректный E-mail";
+"wrongPassword" = "Неверный пароль";
+"passwordIsSmall" = "Пароль слишком короткий";
+"enterEmail" =  "Введите E-mail";
+"enterPassword" = "Введите пароль";
